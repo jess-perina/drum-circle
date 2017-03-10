@@ -20,6 +20,11 @@ window.drumCircle = new window.EventEmitter();
     document.body.style.background = `url(/images/drum${selectBG}.jpg) center center`;
     document.body.style.backgroundSize = `cover`;
 
+    function randomSound(soundObj, keyCode) {
+        let sound = sounds[keyCode][Math.floor(Math.random() * sounds[keyCode].length)];
+        return `sounds/${sound}.wav`;
+    }
+
     function removeTransition(e) {
         if (e.propertyName !== 'transform') return;
         e.target.classList.remove('playing');
@@ -46,12 +51,5 @@ window.drumCircle = new window.EventEmitter();
 
     // resize()
     // window.addEventListener('resize', resize)
-
-
-function randomSound(soundObj, keyCode) {
-    let sound = sounds[keyCode][Math.floor(Math.random() * sounds[keyCode].length)];
-    return `sounds/${sound}.wav`;
-}
-
 
 })();
