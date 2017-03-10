@@ -1,9 +1,9 @@
-window.EventEmitter = () => {
+window.EventEmitter = function () {
   this.subscribers = {};
 };
 
-((EE) => {
-  EE.prototype.on = (eventName, EventListener) => {
+(function (EE) {
+  EE.prototype.on = function(eventName, EventListener) {
     if (!this.subscribers[eventName]) {
       this.subscribers[eventName] = [];
     }
@@ -11,7 +11,7 @@ window.EventEmitter = () => {
     this.subscribers[eventName].push(EventListener);
   };
 
-  EE.prototype.emit = (eventName) => {
+  EE.prototype.emit = function(eventName) {
     if (!this.subscribers[eventName]) {
       return;
     }

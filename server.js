@@ -15,17 +15,18 @@ app.get('/', (req, res) => {
 
 const io = socketio(server);
 
-io.on('connect', (socket) => {
+io.on('connect', function (socket) {
   console.log('A new client connected!');
   console.log(socket.id);
 
-  socket.on('click', (key) => {
-    socket.broadcast.emit('otherKey', key);
+  socket.on('drum', (key) => {
+    socket.broadcast.emit('otherDrum', key);
   });
 
-  socket.on('disconnect', () => {
+  socket.on('disconnect', function() {
     console.log('A client disconnected.');
     console.log(socket.id);
   });
 
 });
+
