@@ -1,6 +1,6 @@
 html {
   font-size: 10px;
-  background:url(http://i.imgur.com/b9r5sEL.jpg) bottom center;
+  background:url(/images/drumBG7.jpg) bottom center;
   background-size: cover;
 }
 body,html {
@@ -19,7 +19,7 @@ body,html {
 
 .key {
   border:4px solid black;
-  border-radius:5px;
+  border-radius:50px;
   margin:1rem;
   font-size: 1.5rem;
   padding:1rem .5rem;
@@ -27,13 +27,13 @@ body,html {
   width:100px;
   text-align: center;
   color:white;
-  background:rgba(0,0,0,0.4);
+  background:rgba(100,0,0,0.4);
   text-shadow:0 0 5px black;
 }
 
 .playing {
   transform:scale(1.1);
-  border-color:#ffc600;
+  border-color:#ff8e00;
   box-shadow: 0 0 10px #ffc600;
 }
 
