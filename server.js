@@ -47,6 +47,12 @@ io.on('connect', function (socket) {
     socket.emit('settings', audio);
   });
 
+  socket.on('newDrums', function () {
+    console.log('getting call for new drums');
+    audio = randomSound(sounds);
+    socket.emit('settings', audio);
+  });
+
   socket.on('drum', (key) => {
     socket.broadcast.emit('otherDrum', key);
   });

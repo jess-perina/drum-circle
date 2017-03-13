@@ -24,6 +24,14 @@ window.drumCircle = new window.EventEmitter();
         drumCircle.emit('drum', key.dataset.key);
     }
 
+    function newDrums() {
+        console.log('change it up');
+        drumCircle.emit('newDrums');
+    }
+
+    const button = document.querySelector('#new');
+    button.addEventListener('click', newDrums);
+
     const keys = Array.from(document.querySelectorAll('.key'));
     keys.forEach(key => key.addEventListener('transitionend', removeTransition));
     window.addEventListener('keydown', playSound);

@@ -16,6 +16,10 @@ socket.on('connect', () => {
     socket.emit('drum', key);
   });
 
+  drumCircle.on('newDrums', () => {
+    socket.emit('newDrums');
+  });
+
   socket.on('otherDrum', function (key) {
     // console.log('hearing other drums', key);
     const audio = document.querySelector(`audio[data-key="${key}"]`);
